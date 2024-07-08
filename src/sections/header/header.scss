@@ -1,0 +1,150 @@
+/*=============== HEADER ===============*/
+.header {
+  position: fixed;
+  width: 100vw;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 2px solid var(--skin-color);
+  transition: .6s;
+  z-index: 1000;
+}
+
+.header .container {
+  height: 100%;
+}
+
+.header .container::-webkit-scrollbar {
+  display: none;
+}
+
+.nav__logo {
+  position: fixed;
+  left: 2rem;
+  top: 30px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--skin-color);
+  text-align: center;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__logo-text {
+  color: white;
+  img {
+    height: 30px;
+    display: block;
+  }
+}
+
+.nav__menu {
+  position: fixed;
+  left: 100px;
+  top: 17px;
+  z-index: 1004;
+}
+
+.nav__list {
+  display: flex;
+}
+
+.nav__link {
+  height: 100%;
+  padding: 0 1rem;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  position: relative;
+  transition: .4s;
+}
+
+.nav__toggle {
+  height: 30px;
+  width: 40px;
+  cursor: pointer;
+  position: fixed;
+  right: 2rem;
+  top: .6rem;
+  font-size: 1.2rem;
+  border-radius: .25rem;
+  background-color: var(--skin-color);
+  color: var(--title-color);
+  display: none;
+  justify-content: center;
+  z-index: 1001;
+  i {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
+
+.nav__close {
+  font-size: 2rem;
+  position: absolute;
+  top: .05rem;
+  right: 2.2rem;
+  cursor: pointer;
+  display: none;
+  z-index: 1003;
+}
+
+/* Active Link */
+.nav__link.active-link, .nav__link:hover {
+  color: var(--skin-color);
+}
+
+///////////////////////////////////////
+
+@media screen and (max-width: 1024px) {
+  .header {
+    height: 50px;
+  }
+
+  .nav__logo {
+    top: 25px;
+  }
+
+  .nav__menu {
+    position: relative;
+    width: fit-content;
+    left: 50%;
+    transform: translate(-50%, -330px);
+    transition: 0.6s; 
+  }
+
+  .nav__list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+  }
+
+  .nav__link {
+    font-size: 1.5rem;
+    line-height: 2.7rem;
+  }
+
+  .nav__link.active-link::after, .nav__link:hover::after {
+    bottom: 0;
+  }
+
+  .nav__close {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 350px) {
+    .nav__logo {
+      left: 1.5rem;
+    }
+    
+    .nav__toggle {
+      right: 1.5rem;
+  }
+}

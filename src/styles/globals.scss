@@ -1,0 +1,281 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*===== Colors =====*/
+    --hue-color:242;
+    --hue-color: orange;
+
+    /* HSL Color Mode */
+    --skin-color: rgb(239, 168, 35);
+    // --skin-color: #4169e1;
+    --hover-color: rgb(0, 167, 204);
+    --title-color: hsl(var(--hue-color), 8%, 95%);
+    --text-color: hsl(var(--hue-color), 8%, 85%);
+    --body-color: hsl(var(--hue-color), 19%, 5%);
+    --body-color: #ffffff;
+    --box-color: hsl(var(--hue-color), 14%, 10%);
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 38%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
+
+    /*===== Font and Typography =====*/
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+
+    /*===== Font Weight =====*/
+    --font-medium: 500;
+    --font-bold: 600;
+
+    /*===== Margenes Bottom =====*/
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*===== Z Index =====*/
+    --z-fixed: 10;
+    --z-modal: 100;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 1024px) {
+    :root {
+        --biggest-font-size: 2rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1.125rem;
+        --normal-font-size: .938rem;
+        --small-font-size: .813rem;
+        --smaller-font-size: .75rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+
+}
+
+body, button, input {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3 {
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    cursor: pointer;
+}
+
+button, input {
+    border: none;
+    outline: none;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;   
+}
+
+.grid {
+    display: grid;   
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+    padding: 5.5rem 0 2rem;
+}
+
+.section__title {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-3);
+}
+
+.section__title::before {
+    content: attr(data-heading);
+    display: block;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    color: var(--skin-color);
+}
+
+
+/*===== Buttons =====*/
+.button {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+    background-color: var(--skin-color);
+    color: var(--title-color);
+    color: white;
+    padding: .5rem 1.4rem;
+    border-radius: .25rem;
+    font-weight: var(--font-medium);
+    position: relative;
+    z-index: 1;
+}
+
+.calendly-badge-widget {
+    left: 1.7rem !important;
+    bottom: 1.7rem !important;
+    width: fit-content !important; 
+    border-radius: .25rem !important;
+    width: 40px !important;
+}
+
+
+
+.calendly-badge-content {
+    border-radius: .7rem !important;
+    padding: 0 1rem !important;
+    font-family: var(--body-font) !important;
+    font-weight: 400 !important;
+    position: relative !important;
+    height: 40px !important;
+    transition: 0.5s;
+}
+
+.calendly-badge-content:hover {
+    background-color: rgb(0, 167, 204) !important;
+    transition: 0.5s;
+}
+
+.button::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--hover-color);
+    z-index: -1;
+    transform-origin: center;
+    transform: scale(0);
+    border-radius: .25rem;
+    transition: .3s;
+}
+
+.button:hover::after {
+    transform: scale(1);
+}
+
+.button__icon {
+    font-size: 1.25rem;
+}
+
+//to disable animations when resize the window screen
+.resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
+}
+
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+  }
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+    width: .60rem;
+    // background-color: var(--body-color);
+    // background-color: rgb(206, 198, 198);
+    background-color: black;
+    // border-radius: .2rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--skin-color);
+    border-radius: .2rem;
+    height: 60px;
+}
+
+
+/*========== BREAKPOINTS ==========*/
+
+/* For Large Devices */
+@media screen and (max-width: 1408px) {
+    .container {
+        margin-left: var(--mb-2-5);
+        margin-right: var(--mb-2-5);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        margin-left: var(--mb-1-5);
+        margin-right: var(--mb-1-5);
+    }
+}
+
+/* For Medium Devices */
+@media screen and (max-width: 768px) {
+    .section {
+        padding: 3.5rem 0 2rem;
+    }
+
+    .section__title {
+        // text-align: center;
+        // font-size: var(--h1-font-size);
+        margin-bottom: var(--mb-1);
+    }
+
+    .button {       
+        column-gap: .5rem;
+        padding: .2rem .7rem;
+        border-radius: .25rem;
+    }
+}
+
+/* For Small Devices */
+@media screen and (max-width: 350px) {
+    .container {
+        margin-left: var(--mb-1);
+        margin-right: var(--mb-1);
+    }
+}
