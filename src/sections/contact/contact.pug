@@ -22,27 +22,28 @@ section.contact.section#contact
             a(href="https://github.com/TrueAlexander" target="_blank").contact__button Inscreva-se 
               i.uil.uil-arrow-right.contact__button-icon         
     .contact__content
-      form.contact__form(action="https://formsubmit.co/caminante.msk@gmail.com" method="POST")
+      form.contact__form
         .input__container
-          input.input(type="text" name="nome" minlength="3" required) 
+          input.input(type="text" name="nome" required) 
           label(for="nome") Seu Nome
-          span Username
+          span Seu Nome
         .input__container
           input.input(type="email" name="email" required)
           label(for="email") E-mail
-          span Email
+          span E-mail
         .input__container
-          input.input(type="number" name="telefone" minlength="9" maxlength="13" required)
+          input.input(type="number" name="telefone" required)
           label(for="telefone") Telefone
-          span Phone
+          span Telefone
         .input__container.textarea
-          textarea.input(name="mensagem" required minlength="10") 
+          textarea.input(name="mensagem" required) 
           label(for="mensagem") Mensagem
-          span Message
+          span Mensagem
         input(type="hidden" name="_subject" value="Mensagem de Cliente!")
         input(type="hidden" name="_template" value="table")
         input(type="hidden" name="_captcha" value="false")
         button.button(type="submit") 
           i.uil.uil-navigator.button__icon 
           | Enviar
+        div#error-container
           

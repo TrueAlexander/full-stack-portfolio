@@ -16,20 +16,3 @@ opinions()
 contact()
 resizeAnimation()
 antiFouc()
-
-// let repeat = true
-// console.log('sera')
-// while(repeat) {console.log('sera')}
-
-// for (let count=10; count>0; count=count-1) {
-//   console.log(count)
-// }
-
-function Car(color) {
-  this.wheels = 4
-  this.color = color
-}
-
-let myCar = new Car("blue")
-
-console.log(myCar)

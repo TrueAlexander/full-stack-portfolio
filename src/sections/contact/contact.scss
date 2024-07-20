@@ -55,6 +55,20 @@
   &__button:hover &__button-icon {
     transform: translateX(.25rem);
   }
+
+  &__errors {
+    display: none;
+  }
+
+}
+
+#error-container {
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+  font-size: var(--smaller-font-size);
 }
 
 
