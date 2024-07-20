@@ -1,0 +1,31 @@
+/*===== api-show Section =====*/
+
+.api-show {
+
+  &__container {
+
+  }
+
+  &__title {
+    text-align: center;
+    color: var( --skin-color);
+    font-weight: 400;
+  }
+
+  &__text {
+    text-decoration: underline;
+    text-align: center;
+    margin: 25px 0;
+  }
+
+  &__button {
+    margin-top: 20px;
+    border: 1px solid;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0)
+  }
+}
+
+
+
